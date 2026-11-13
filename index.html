@@ -1,0 +1,768 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kitobxon — Onlayn kitob do'koni</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="180x180" href="img/favicon.png">
+    <link rel="apple-touch-icon" href="img/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="yuklash" id="yuklash">
+        <div class="yuklash-ich">
+            <div class="logo yuklash-logo">
+                <span class="logo-belgi">K</span>
+                <span class="logo-nom">Kitobxon</span>
+            </div>
+            <div class="yuklash-yol">
+                <span class="yuklash-chiziq"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="tepa">
+        <div class="qolip tepa-ich">
+            <p class="tepa-matn">200 000 so'mdan ortiq xaridlarga yetkazib berish bepul</p>
+            <div class="tepa-linklar">
+                <a href="tel:+998901234567" class="tepa-link">+998 90 123 45 67</a>
+                <a href="#aloqa" class="tepa-link">Yordam</a>
+            </div>
+        </div>
+    </div>
+
+    <header class="shapka" id="shapka">
+        <div class="qolip shapka-ich">
+            <a href="#bosh" class="logo">
+                <span class="logo-belgi">K</span>
+                <span class="logo-nom">Kitobxon</span>
+            </a>
+
+            <nav class="menyu" id="menyu">
+                <ul class="menyu-royxat">
+                    <li><a href="#bosh" class="menyu-link menyu-faol">Bosh sahifa</a></li>
+                    <li><a href="#turlar" class="menyu-link">Kategoriyalar</a></li>
+                    <li><a href="#kitoblar" class="menyu-link">Kitoblar</a></li>
+                    <li><a href="#mualliflar" class="menyu-link">Mualliflar</a></li>
+                    <li><a href="#fikrlar" class="menyu-link">Fikrlar</a></li>
+                    <li><a href="#aloqa" class="menyu-link">Aloqa</a></li>
+                </ul>
+            </nav>
+
+            <div class="shapka-tugmalar">
+                <form class="qidiruv" id="qidiruvForma">
+                    <input
+                        type="search"
+                        class="qidiruv-input"
+                        id="qidiruvInput"
+                        placeholder="Kitob yoki muallif..."
+                        aria-label="Qidirish">
+                    <button type="submit" class="qidiruv-btn" aria-label="Qidirish">
+                        <svg viewBox="0 0 24 24" width="18" height="18"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                            <circle cx="11" cy="11" r="7"/>
+                            <path d="m20 20-3.5-3.5"/>
+                        </svg>
+                    </button>
+                </form>
+                <button class="ikon-btn mavzu-btn" id="mavzuBtn" aria-label="Mavzuni almashtirish">
+                    <svg class="oy" viewBox="0 0 24 24" width="20" height="20"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5Z"/>
+                    </svg>
+                    <svg class="quyosh" viewBox="0 0 24 24" width="20" height="20"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                        <circle cx="12" cy="12" r="4"/>
+                        <path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/>
+                    </svg>
+                </button>
+                <button class="ikon-btn" id="likeBtn" aria-label="Sevimlilar">
+                    <svg viewBox="0 0 24 24" width="20" height="20"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                        <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                    </svg>
+                    <span class="son" id="likeSon">0</span>
+                </button>
+                <button class="ikon-btn" id="savatBtn" aria-label="Savat">
+                    <svg viewBox="0 0 24 24" width="20" height="20"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M5 7h14l-1.5 11h-11Z"/>
+                        <path d="M9 7V5a3 3 0 0 1 6 0v2"/>
+                    </svg>
+                    <span class="son" id="savatSon">0</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+
+        <section class="banner" id="bosh">
+            <div class="qolip banner-ich">
+                <div class="banner-matnlar">
+                    <span class="kichik-nom">Yangi mavsum to'plami</span>
+                    <h1 class="banner-nom">Har bir sahifada <em>yangi dunyo</em> kutmoqda</h1>
+                    <p class="banner-matn">
+                        10 000 dan ortiq badiiy, ilmiy va bolalar kitoblari. O'zingizga mos kitobni toping va 24 soat ichida eshigingizgacha yetkazib beramiz.
+                    </p>
+                    <div class="banner-tugmalar">
+                        <a href="#kitoblar" class="btn btn-asosiy">Xaridni boshlash</a>
+                        <a href="#turlar" class="btn btn-chiziq">Kategoriyalar</a>
+                    </div>
+                    <ul class="raqamlar">
+                        <li class="raqam">
+                            <strong class="raqam-son">10K+</strong>
+                            <span class="raqam-nom">Kitoblar</span>
+                        </li>
+                        <li class="raqam">
+                            <strong class="raqam-son">25K+</strong>
+                            <span class="raqam-nom">Mijozlar</span>
+                        </li>
+                        <li class="raqam">
+                            <strong class="raqam-son">4.9</strong>
+                            <span class="raqam-nom">Reyting</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="banner-rasm">
+                    <div class="doira"></div>
+                    <div class="taxlam">
+                        <img src="img/otkan-kunlar.webp" alt="O'tkan kunlar — Abdulla Qodiriy" class="banner-kitob">
+                        <img
+                            src="img/dunyoning-ishlari.webp"
+                            alt="Dunyoning ishlari — O'tkir Hoshimov"
+                            class="banner-kitob">
+                        <img src="img/kecha-va-kunduz.webp" alt="Kecha va kunduz — Cho'lpon" class="banner-kitob">
+                    </div>
+                    <div class="chegirma">
+                        <strong>-30%</strong>
+                        <span>Bestsellerlarga</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="afzalliklar">
+            <div class="qolip afzalliklar-ich">
+                <div class="afzallik">
+                    <div class="afzallik-ikon">
+                        <svg viewBox="0 0 24 24" width="24" height="24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 7h11v9H3z"/>
+                            <path d="M14 10h4l3 3v3h-7z"/>
+                            <circle cx="7" cy="18" r="2"/>
+                            <circle cx="17" cy="18" r="2"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="afzallik-nom">Tez yetkazish</h3>
+                        <p class="afzallik-matn">Toshkent bo'ylab 24 soatda</p>
+                    </div>
+                </div>
+                <div class="afzallik">
+                    <div class="afzallik-ikon">
+                        <svg viewBox="0 0 24 24" width="24" height="24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M12 3 4 6v6c0 4.5 3.4 8 8 9 4.6-1 8-4.5 8-9V6z"/>
+                            <path d="m9 12 2 2 4-4"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="afzallik-nom">Original kitoblar</h3>
+                        <p class="afzallik-matn">Faqat rasmiy nashriyotlardan</p>
+                    </div>
+                </div>
+                <div class="afzallik">
+                    <div class="afzallik-ikon">
+                        <svg viewBox="0 0 24 24" width="24" height="24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="3" y="6" width="18" height="13" rx="2"/>
+                            <path d="M3 10h18"/>
+                            <path d="M7 15h3"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="afzallik-nom">Qulay to'lov</h3>
+                        <p class="afzallik-matn">Click, Payme, naqd pul</p>
+                    </div>
+                </div>
+                <div class="afzallik">
+                    <div class="afzallik-ikon">
+                        <svg viewBox="0 0 24 24" width="24" height="24"
+                            fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M3 12a9 9 0 1 0 3-6.7L3 8"/>
+                            <path d="M3 3v5h5"/>
+                        </svg>
+                    </div>
+                    <div>
+                        <h3 class="afzallik-nom">Qaytarish kafolati</h3>
+                        <p class="afzallik-matn">14 kun ichida bepul</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bolim turlar" id="turlar">
+            <div class="qolip">
+                <div class="bolim-bosh">
+                    <span class="kichik-nom">Kategoriyalar</span>
+                    <h2 class="bolim-nom">Qiziqishingizga ko'ra tanlang</h2>
+                </div>
+                <div class="turlar-ich">
+                    <a href="#kitoblar" class="tur tur-1" data-tur="badiiy">
+                        <span class="tur-son">2 340 kitob</span>
+                        <h3 class="tur-nom">Badiiy adabiyot</h3>
+                    </a>
+                    <a href="#kitoblar" class="tur tur-2" data-tur="biznes">
+                        <span class="tur-son">860 kitob</span>
+                        <h3 class="tur-nom">Biznes</h3>
+                    </a>
+                    <a href="#kitoblar" class="tur tur-3" data-tur="psixologiya">
+                        <span class="tur-son">720 kitob</span>
+                        <h3 class="tur-nom">Psixologiya</h3>
+                    </a>
+                    <a href="#kitoblar" class="tur tur-4" data-tur="bolalar">
+                        <span class="tur-son">1 150 kitob</span>
+                        <h3 class="tur-nom">Bolalar uchun</h3>
+                    </a>
+                    <a href="#kitoblar" class="tur tur-5" data-tur="tarix">
+                        <span class="tur-son">540 kitob</span>
+                        <h3 class="tur-nom">Tarix</h3>
+                    </a>
+                    <a href="#kitoblar" class="tur tur-6" data-tur="ilmiy">
+                        <span class="tur-son">610 kitob</span>
+                        <h3 class="tur-nom">Ilmiy-ommabop</h3>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="bolim kitoblar" id="kitoblar">
+            <div class="qolip">
+                <div class="bolim-bosh bolim-qator">
+                    <div>
+                        <span class="kichik-nom">Ommabop</span>
+                        <h2 class="bolim-nom">Eng ko'p o'qilayotgan kitoblar</h2>
+                    </div>
+                    <div class="tablar" id="tablar">
+                        <button class="tab tab-faol" data-filtr="hammasi">Barchasi</button>
+                        <button class="tab" data-filtr="badiiy">Badiiy</button>
+                        <button class="tab" data-filtr="biznes">Biznes</button>
+                        <button class="tab" data-filtr="psixologiya">Psixologiya</button>
+                        <button class="tab" data-filtr="bolalar">Bolalar</button>
+                    </div>
+                </div>
+
+                <div class="kitoblar-ich" id="kitoblarIch">
+                    <article class="kitob" data-id="1" data-tur="badiiy">
+                        <div class="kitob-rasm">
+                            <span class="teg">Bestseller</span>
+                            <button class="like" data-id="1" aria-label="Sevimlilarga qo'shish">
+                                <svg viewBox="0 0 24 24" width="18" height="18"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                                </svg>
+                            </button>
+                            <img src="img/otkan-kunlar.webp" alt="O'tkan kunlar" class="muqova" loading="lazy">
+                        </div>
+                        <div class="kitob-ich">
+                            <div class="baho" data-baho="5">★★★★★ <span class="baho-son">(248)</span></div>
+                            <h3 class="kitob-nom">O'tkan kunlar</h3>
+                            <p class="kitob-muallif">Abdulla Qodiriy</p>
+                            <div class="kitob-past">
+                                <div class="narx">
+                                    <span class="narx-hozir">69 000 so'm</span>
+                                    <span class="narx-eski">89 000</span>
+                                </div>
+                                <button class="savat-btn" data-id="1" aria-label="Savatga qo'shish">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kitob" data-id="2" data-tur="biznes">
+                        <div class="kitob-rasm">
+                            <span class="teg teg-yangi">Yangi</span>
+                            <button class="like" data-id="2" aria-label="Sevimlilarga qo'shish">
+                                <svg viewBox="0 0 24 24" width="18" height="18"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                                </svg>
+                            </button>
+                            <img src="img/boy-ota.jpg" alt="Boy ota, kambag'al ota" class="muqova" loading="lazy">
+                        </div>
+                        <div class="kitob-ich">
+                            <div class="baho" data-baho="5">★★★★★ <span class="baho-son">(512)</span></div>
+                            <h3 class="kitob-nom">Boy ota, kambag'al ota</h3>
+                            <p class="kitob-muallif">Robert Kiyosaki</p>
+                            <div class="kitob-past">
+                                <div class="narx">
+                                    <span class="narx-hozir">75 000 so'm</span>
+                                </div>
+                                <button class="savat-btn" data-id="2" aria-label="Savatga qo'shish">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kitob" data-id="3" data-tur="psixologiya">
+                        <div class="kitob-rasm">
+                            <button class="like" data-id="3" aria-label="Sevimlilarga qo'shish">
+                                <svg viewBox="0 0 24 24" width="18" height="18"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                                </svg>
+                            </button>
+                            <img
+                                src="img/emotional-intelligence.jpg"
+                                alt="Emotsional intellekt"
+                                class="muqova"
+                                loading="lazy">
+                        </div>
+                        <div class="kitob-ich">
+                            <div class="baho" data-baho="4">★★★★☆ <span class="baho-son">(173)</span></div>
+                            <h3 class="kitob-nom">Emotsional intellekt</h3>
+                            <p class="kitob-muallif">Daniel Goleman</p>
+                            <div class="kitob-past">
+                                <div class="narx">
+                                    <span class="narx-hozir">82 000 so'm</span>
+                                </div>
+                                <button class="savat-btn" data-id="3" aria-label="Savatga qo'shish">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kitob" data-id="4" data-tur="bolalar">
+                        <div class="kitob-rasm">
+                            <span class="teg teg-chegirma">-20%</span>
+                            <button class="like" data-id="4" aria-label="Sevimlilarga qo'shish">
+                                <svg viewBox="0 0 24 24" width="18" height="18"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                                </svg>
+                            </button>
+                            <img src="img/kichkina-shahzoda.jpg" alt="Kichkina shahzoda" class="muqova" loading="lazy">
+                        </div>
+                        <div class="kitob-ich">
+                            <div class="baho" data-baho="5">★★★★★ <span class="baho-son">(389)</span></div>
+                            <h3 class="kitob-nom">Kichkina shahzoda</h3>
+                            <p class="kitob-muallif">Antuan de Sent-Ekzyuperi</p>
+                            <div class="kitob-past">
+                                <div class="narx">
+                                    <span class="narx-hozir">40 000 so'm</span>
+                                    <span class="narx-eski">50 000</span>
+                                </div>
+                                <button class="savat-btn" data-id="4" aria-label="Savatga qo'shish">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kitob" data-id="5" data-tur="badiiy">
+                        <div class="kitob-rasm">
+                            <button class="like" data-id="5" aria-label="Sevimlilarga qo'shish">
+                                <svg viewBox="0 0 24 24" width="18" height="18"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                                </svg>
+                            </button>
+                            <img src="img/kecha-va-kunduz.webp" alt="Kecha va kunduz" class="muqova" loading="lazy">
+                        </div>
+                        <div class="kitob-ich">
+                            <div class="baho" data-baho="5">★★★★★ <span class="baho-son">(201)</span></div>
+                            <h3 class="kitob-nom">Kecha va kunduz</h3>
+                            <p class="kitob-muallif">Cho'lpon</p>
+                            <div class="kitob-past">
+                                <div class="narx">
+                                    <span class="narx-hozir">58 000 so'm</span>
+                                </div>
+                                <button class="savat-btn" data-id="5" aria-label="Savatga qo'shish">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kitob" data-id="6" data-tur="biznes">
+                        <div class="kitob-rasm">
+                            <span class="teg">Bestseller</span>
+                            <button class="like" data-id="6" aria-label="Sevimlilarga qo'shish">
+                                <svg viewBox="0 0 24 24" width="18" height="18"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                                </svg>
+                            </button>
+                            <img src="img/atom-odatlar.webp" alt="Atom odatlar" class="muqova" loading="lazy">
+                        </div>
+                        <div class="kitob-ich">
+                            <div class="baho" data-baho="5">★★★★★ <span class="baho-son">(647)</span></div>
+                            <h3 class="kitob-nom">Atom odatlar</h3>
+                            <p class="kitob-muallif">Jeyms Klir</p>
+                            <div class="kitob-past">
+                                <div class="narx">
+                                    <span class="narx-hozir">79 000 so'm</span>
+                                    <span class="narx-eski">95 000</span>
+                                </div>
+                                <button class="savat-btn" data-id="6" aria-label="Savatga qo'shish">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kitob" data-id="7" data-tur="psixologiya">
+                        <div class="kitob-rasm">
+                            <span class="teg teg-yangi">Yangi</span>
+                            <button class="like" data-id="7" aria-label="Sevimlilarga qo'shish">
+                                <svg viewBox="0 0 24 24" width="18" height="18"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                                </svg>
+                            </button>
+                            <img src="img/hayotga-ha-de.webp" alt="Hayotga ha de" class="muqova" loading="lazy">
+                        </div>
+                        <div class="kitob-ich">
+                            <div class="baho" data-baho="5">★★★★★ <span class="baho-son">(296)</span></div>
+                            <h3 class="kitob-nom">Hayotga ha de</h3>
+                            <p class="kitob-muallif">Viktor Frankl</p>
+                            <div class="kitob-past">
+                                <div class="narx">
+                                    <span class="narx-hozir">64 000 so'm</span>
+                                </div>
+                                <button class="savat-btn" data-id="7" aria-label="Savatga qo'shish">+</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="kitob" data-id="8" data-tur="bolalar">
+                        <div class="kitob-rasm">
+                            <button class="like" data-id="8" aria-label="Sevimlilarga qo'shish">
+                                <svg viewBox="0 0 24 24" width="18" height="18"
+                                    fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                                    <path d="M12 20s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.5-7 10-7 10Z"/>
+                                </svg>
+                            </button>
+                            <img src="img/sariq-dev.jpg" alt="Sariq devni minib" class="muqova" loading="lazy">
+                        </div>
+                        <div class="kitob-ich">
+                            <div class="baho" data-baho="4">★★★★☆ <span class="baho-son">(158)</span></div>
+                            <h3 class="kitob-nom">Sariq devni minib</h3>
+                            <p class="kitob-muallif">Xudoyberdi To'xtaboyev</p>
+                            <div class="kitob-past">
+                                <div class="narx">
+                                    <span class="narx-hozir">45 000 so'm</span>
+                                </div>
+                                <button class="savat-btn" data-id="8" aria-label="Savatga qo'shish">+</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="kitoblar-tugma">
+                    <a href="#kitoblar" class="btn btn-qora" id="hammasi">Barcha kitoblarni ko'rish</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="aksiya">
+            <div class="qolip aksiya-ich">
+                <div class="aksiya-matnlar">
+                    <span class="kichik-nom kichik-nom-och">Haftalik aksiya</span>
+                    <h2 class="aksiya-nom">Ikkita kitob oling — uchinchisi sovg'a!</h2>
+                    <p class="aksiya-matn">
+                        Aksiya barcha badiiy kitoblarga amal qiladi. Shoshiling, taklif muddati cheklangan.
+                    </p>
+                    <div class="taymer" id="taymer">
+                        <div class="taymer-quti">
+                            <strong class="taymer-son" id="kun">03</strong>
+                            <span class="taymer-nom">Kun</span>
+                        </div>
+                        <div class="taymer-quti">
+                            <strong class="taymer-son" id="soat">12</strong>
+                            <span class="taymer-nom">Soat</span>
+                        </div>
+                        <div class="taymer-quti">
+                            <strong class="taymer-son" id="daqiqa">45</strong>
+                            <span class="taymer-nom">Daqiqa</span>
+                        </div>
+                        <div class="taymer-quti">
+                            <strong class="taymer-son" id="soniya">30</strong>
+                            <span class="taymer-nom">Soniya</span>
+                        </div>
+                    </div>
+                    <a href="#kitoblar" class="btn btn-oq">Aksiyadan foydalanish</a>
+                </div>
+                <div class="aksiya-rasm">
+                    <img src="img/alkimyogar.jpg" alt="Alkimyogar — Paulo Koelo" class="aksiya-kitob" loading="lazy">
+                    <img src="img/1984.jpg" alt="1984 — Jorj Oruell" class="aksiya-kitob" loading="lazy">
+                    <div class="sovga">+1</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bolim mualliflar" id="mualliflar">
+            <div class="qolip">
+                <div class="bolim-bosh">
+                    <span class="kichik-nom">Mualliflar</span>
+                    <h2 class="bolim-nom">Sevimli mualliflaringiz</h2>
+                </div>
+                <div class="mualliflar-ich">
+                    <div class="muallif">
+                        <img src="img/author-qodiriy.jpg" alt="Abdulla Qodiriy" class="muallif-rasm" loading="lazy">
+                        <h3 class="muallif-ism">Abdulla Qodiriy</h3>
+                        <p class="muallif-son">12 ta kitob</p>
+                    </div>
+                    <div class="muallif">
+                        <img src="img/author-cholpon.jpg" alt="Cho'lpon" class="muallif-rasm" loading="lazy">
+                        <h3 class="muallif-ism">Cho'lpon</h3>
+                        <p class="muallif-son">9 ta kitob</p>
+                    </div>
+                    <div class="muallif">
+                        <img src="img/author-hoshimov.jpg" alt="O'tkir Hoshimov" class="muallif-rasm" loading="lazy">
+                        <h3 class="muallif-ism">O'tkir Hoshimov</h3>
+                        <p class="muallif-son">15 ta kitob</p>
+                    </div>
+                    <div class="muallif">
+                        <img src="img/author-vohidov.jpg" alt="Erkin Vohidov" class="muallif-rasm" loading="lazy">
+                        <h3 class="muallif-ism">Erkin Vohidov</h3>
+                        <p class="muallif-son">18 ta kitob</p>
+                    </div>
+                    <div class="muallif">
+                        <img src="img/author-koelo.jpg" alt="Paulo Koelo" class="muallif-rasm" loading="lazy">
+                        <h3 class="muallif-ism">Paulo Koelo</h3>
+                        <p class="muallif-son">21 ta kitob</p>
+                    </div>
+                    <div class="muallif">
+                        <img src="img/author-klir.jpg" alt="Jeyms Klir" class="muallif-rasm" loading="lazy">
+                        <h3 class="muallif-ism">Jeyms Klir</h3>
+                        <p class="muallif-son">3 ta kitob</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="bolim fikrlar" id="fikrlar">
+            <div class="qolip">
+                <div class="bolim-bosh">
+                    <span class="kichik-nom">Fikrlar</span>
+                    <h2 class="bolim-nom">Mijozlarimiz nima deydi</h2>
+                </div>
+            </div>
+            <div class="fikr-yol">
+                <div class="fikr-lenta" id="fikrLenta">
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★★</div>
+                        <p class="fikr-matn">
+                            Buyurtma bergan kunimning ertasiga kitoblar yetib keldi. Qadoqlash juda chiroyli, kitoblar butunlay yangi. Endi faqat shu yerdan xarid qilaman!
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-1.jpg" alt="Madina Aliyeva" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Madina Aliyeva</cite>
+                                <span class="fikr-kasb">Talaba</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★★</div>
+                        <p class="fikr-matn">
+                            Biznes kitoblari tanlovi juda keng. Narxlar boshqa do'konlarga qaraganda arzonroq, aksiyalar esa doim bor. Tavsiya qilaman.
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-2.jpg" alt="Jasur Toshmatov" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Jasur Toshmatov</cite>
+                                <span class="fikr-kasb">Tadbirkor</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★☆</div>
+                        <p class="fikr-matn">
+                            Farzandlarim uchun bolalar kitoblarini olib turaman. Rasmlari rangli, qog'ozi sifatli. Operatorlar ham juda xushmuomala.
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-3.jpg" alt="Nodira Rahimova" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Nodira Rahimova</cite>
+                                <span class="fikr-kasb">O'qituvchi</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★★</div>
+                        <p class="fikr-matn">
+                            Samarqanddan buyurtma berdim, uch kunda yetib keldi. Kuryer telefon qilib, qulay vaqtni so'radi. Xizmat a'lo darajada.
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-4.jpg" alt="Bekzod Karimov" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Bekzod Karimov</cite>
+                                <span class="fikr-kasb">Dasturchi</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★★</div>
+                        <p class="fikr-matn">
+                            O'zbek klassikasi bo'yicha bunday katta tanlovni boshqa joyda ko'rmaganman. Qodiriy va Cho'lponning barcha asarlarini shu yerdan oldim.
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-5.jpg" alt="Gulnora Yusupova" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Gulnora Yusupova</cite>
+                                <span class="fikr-kasb">Filolog</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★☆</div>
+                        <p class="fikr-matn">
+                            Saytdan foydalanish juda qulay, kerakli kitobni bir daqiqada topdim. Faqat ba'zi kitoblar tez tugab qolyapti, ko'proq olib kelinglar.
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-6.jpg" alt="Sardor Ergashev" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Sardor Ergashev</cite>
+                                <span class="fikr-kasb">Muhandis</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★★</div>
+                        <p class="fikr-matn">
+                            Dugonamning tug'ilgan kuniga sovg'a sifatida buyurtma qildim. Chiroyli qog'ozga o'rab yuborishdi, juda xursand bo'ldi.
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-7.jpg" alt="Dilnoza Saidova" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Dilnoza Saidova</cite>
+                                <span class="fikr-kasb">Dizayner</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★★</div>
+                        <p class="fikr-matn">
+                            "Ikkita oling — uchinchisi sovg'a" aksiyasidan foydalandim. Uchta kitobni ikki kitob narxiga oldim, juda foydali taklif.
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-8.jpg" alt="Otabek Nurmatov" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Otabek Nurmatov</cite>
+                                <span class="fikr-kasb">Talaba</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                    <blockquote class="fikr">
+                        <div class="fikr-yulduz">★★★★★</div>
+                        <p class="fikr-matn">
+                            Psixologiya bo'yicha tarjima kitoblar sifatli chiqarilgan, tarjimasi ham ravon. Har oy shu yerdan yangi kitob olishni odat qildim.
+                        </p>
+                        <footer class="fikr-egasi">
+                            <img src="img/user-9.jpg" alt="Malika Hasanova" class="fikr-rasm" loading="lazy">
+                            <div>
+                                <cite class="fikr-ism">Malika Hasanova</cite>
+                                <span class="fikr-kasb">Psixolog</span>
+                            </div>
+                        </footer>
+                    </blockquote>
+                </div>
+            </div>
+        </section>
+
+        <section class="obuna" id="aloqa">
+            <div class="qolip">
+                <div class="obuna-quti">
+                    <div class="obuna-matnlar">
+                        <h2 class="obuna-nom">Yangiliklardan birinchi bo'lib xabardor bo'ling</h2>
+                        <p class="obuna-matn">Obuna bo'ling va birinchi buyurtmangizga 15% chegirma oling.</p>
+                    </div>
+                    <form class="obuna-forma" id="obunaForma">
+                        <input
+                            type="email"
+                            class="obuna-input"
+                            id="obunaEmail"
+                            placeholder="Email manzilingiz"
+                            required
+                            aria-label="Email">
+                        <button type="submit" class="btn btn-asosiy">Obuna bo'lish</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="pastki">
+        <div class="qolip pastki-ich">
+            <div class="pastki-ustun pastki-brend">
+                <a href="#bosh" class="logo logo-och">
+                    <span class="logo-belgi">K</span>
+                    <span class="logo-nom">Kitobxon</span>
+                </a>
+                <p class="pastki-matn">
+                    Kitob o'qishni sevuvchilar uchun 2018-yildan beri xizmat ko'rsatib kelayotgan onlayn do'kon.
+                </p>
+                <div class="tarmoqlar">
+                    <a href="#" class="tarmoq" aria-label="Telegram">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M21.94 4.3 18.9 18.63c-.23 1.02-.83 1.27-1.69.79l-4.66-3.43-2.25 2.16c-.25.25-.46.46-.94.46l.34-4.74 8.63-7.8c.38-.33-.08-.52-.58-.19L7.08 12.6l-4.6-1.44c-1-.31-1.02-1 .21-1.48l17.97-6.93c.83-.31 1.56.19 1.28 1.55Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="tarmoq" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24" width="18" height="18"
+                            fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="5"/>
+                            <circle cx="12" cy="12" r="4"/>
+                            <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="tarmoq" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.87.25-1.46 1.5-1.46H16.6V4.46A21 21 0 0 0 14.3 4.3c-2.3 0-3.8 1.4-3.8 3.95v2.25H8v3h2.5V21h3Z"/>
+                        </svg>
+                    </a>
+                    <a href="#" class="tarmoq" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+                            <path d="M22.5 7.2a2.8 2.8 0 0 0-2-2C18.8 4.8 12 4.8 12 4.8s-6.8 0-8.5.4a2.8 2.8 0 0 0-2 2A29 29 0 0 0 1.1 12a29 29 0 0 0 .4 4.8 2.8 2.8 0 0 0 2 2c1.7.4 8.5.4 8.5.4s6.8 0 8.5-.4a2.8 2.8 0 0 0 2-2 29 29 0 0 0 .4-4.8 29 29 0 0 0-.4-4.8ZM9.8 15V9l5.7 3-5.7 3Z"/>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="pastki-ustun">
+                <h4 class="pastki-nom">Do'kon</h4>
+                <ul class="pastki-royxat">
+                    <li><a href="#kitoblar">Yangi kitoblar</a></li>
+                    <li><a href="#kitoblar">Bestsellerlar</a></li>
+                    <li><a href="#kitoblar">Aksiyalar</a></li>
+                    <li><a href="#turlar">Kategoriyalar</a></li>
+                </ul>
+            </div>
+            <div class="pastki-ustun">
+                <h4 class="pastki-nom">Yordam</h4>
+                <ul class="pastki-royxat">
+                    <li><a href="#">Yetkazib berish</a></li>
+                    <li><a href="#">To'lov usullari</a></li>
+                    <li><a href="#">Qaytarish</a></li>
+                    <li><a href="#">Ko'p so'raladigan savollar</a></li>
+                </ul>
+            </div>
+            <div class="pastki-ustun">
+                <h4 class="pastki-nom">Aloqa</h4>
+                <ul class="pastki-royxat">
+                    <li>Toshkent sh., Amir Temur ko'chasi, 15</li>
+                    <li><a href="tel:+998901234567">+998 90 123 45 67</a></li>
+                    <li><a href="mailto:info@kitobxon.uz">info@kitobxon.uz</a></li>
+                    <li>Har kuni 09:00 — 21:00</li>
+                </ul>
+            </div>
+        </div>
+        <div class="qolip pastki-oxir">
+            <p>&copy; 2026 Kitobxon. Barcha huquqlar himoyalangan.</p>
+            <a href="#bosh" class="tepaga" id="tepaga" aria-label="Yuqoriga">&#8593;</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
